@@ -3,31 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valorant Agent Guesser</title>
+    <title>ValoGuessr</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>VALORANT AGENTS</h1>
-        <p>Guess The Agent</p>
+        <h1>VALO GUESSR</h1>
+        <div class="stats">SCORE: <span id="score-val">0</span></div>
     </header>
-    <!-- <hr> -->
+
     <main>
-        <div id="loading-state" class="loader-container">
-            <div class="spinner"></div>
-            <p>Fetching Agent Data...</p>
-        </div>
-
-        <div id="error-message" class="hidden">
-            <p>❌ Failed to load agents. Please check your connection.</p>
-        </div>
-
-        <div id="agent-grid" class="agent-grid">
+        <div id="game-container" class="game-card">
+            <div id="loading-state">
+                <div class="spinner"></div>
+                <p>INTERCEPTING AGENT DATA...</p>
             </div>
+            
+            <div id="quiz-area" class="hidden">
+                <div class="mystery-circle">
+                    <span id="mystery-icon">?</span>
+                    <img id="agent-image" src="" class="hidden">
+                </div>
+
+                <div class="hints">
+                    <p id="hint-role">CLASS: <span id="role-text">LOADING...</span></p>
+                    <div id="quote-container">
+                        <p id="hint-quote">"ULTIMATE READY. IDENTIFY TARGET."</p>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <input type="text" id="user-guess" placeholder="WHO IS THIS RADIANT?" autocomplete="off">
+                    <button id="submit-guess">JUDGE ANSWER</button>
+                </div>
+
+                <p id="feedback-message"></p>
+                <button id="next-btn" class="hidden">NEXT AGENT →</button>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 | Valo Guesser | HELOOOOOO</p>
+        <p>&copy; 2026 | Valo Guessr | heloooooo</p>
     </footer>
 
     <script src="script.js"></script>
